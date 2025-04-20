@@ -1,6 +1,7 @@
 #include "../include/ui.h"
 #include "../include/user.h"
 #include <cstdlib>
+
 using namespace std;
 int main() {
     while (true) {
@@ -10,6 +11,7 @@ int main() {
 
         if (choice == '1') {
             showLoginScreen();
+
             while (true) {
 	            string username = getInput("Please enter your username: ");
 	            string password = getInput("Please enter your password: ");
@@ -54,6 +56,27 @@ int main() {
 	        } 
 	    } else {
 	    	system("cls");
+
+            std::string username = getInput("Please enter your username: ");
+            std::string password = getInput("Please enter your password: ");
+            if (loginUser(username, password)) {
+                showMessage(">> SUCCESSFULLY LOGIN <<");
+                break; 
+            } else {
+                showMessage(">> LOGIN FAILED. Please try again.\n");
+            }
+        } else if (choice == '2') {
+            showRegisterScreen();
+            std::string username = getInput("Please enter your username: ");
+            std::string password = getInput("Please enter your password: ");
+            if (registerUser(username, password)) {
+                showMessage(">>> SUCCESSFULLY CREATE ACCOUNT <<<");
+                break; 
+            } else {
+                showMessage("Invalid input or username exists!\n");
+            }
+        } else {
+
             showMessage("WRONG INPUT\n");
         }
     }
