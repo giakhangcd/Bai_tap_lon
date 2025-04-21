@@ -2,13 +2,16 @@
 #include <iostream>
 #include <conio.h>
 
+using namespace std;
+
 void showMenu() {
-    std::cout << "========================\n";
-    std::cout << "TRANSACTION SYSTEM\n";
-    std::cout << "1 LOGIN\n";
-    std::cout << "2 REGISTER\n";
-    std::cout << "PRESS 1/2\n";
-    std::cout << "========================\n";
+    cout << "========================\n";
+    cout << "TRANSACTION SYSTEM\n";
+    cout << "1 LOGIN\n";
+    cout << "2 REGISTER\n";
+    cout << "3 REGISTER FOR MANAGER\n";
+    cout << "PRESS 1/2/3\n";
+    cout << "========================\n";
 }
 
 char getMenuChoice() {
@@ -16,20 +19,28 @@ char getMenuChoice() {
 }
 
 void showRegisterScreen() {
-    std::cout << ">> REGISTER SYSTEM <<\n";
+    cout << ">> REGISTER SYSTEM <<\n";
 }
 
 void showLoginScreen() {
-    std::cout << ">> LOGIN SYSTEM <<\n";
+    cout << ">> LOGIN SYSTEM <<\n";
 }
 
-std::string getInput(const std::string& prompt) {
-    std::cout << prompt;
-    std::string input;
-    std::getline(std::cin, input);
+void showRegisterScreenForMnger() {
+	cout << ">> REGISTER SYSTEM FOR MANAGER <<\n";
+}
+string getInput(const string& prompt) {
+    cout << prompt;
+    string input;
+    getline(cin, input);
     return input;
 }
 
-void showMessage(const std::string& message) {
-    std::cout << message << "\n";
+void showMessage(const string& message) {
+    cout << message << "\n";
 }
+
+void showChangePasswordScreen() {
+	cout << ">> CHANGE YOUR INFORMATION <<\n";
+}
+
