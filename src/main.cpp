@@ -100,6 +100,7 @@ int main() {
             }
         } else if (choice == '3') {  // REGISTER FOR MANAGER
             while (true) {
+                printHeader("REGISTER FOR MANAGER");
                 while (true) {
                         string adminPassword = getInput("Enter admin password: ");
                         if (adminPassword == "admin123") {
@@ -268,6 +269,7 @@ int main() {
                 if (choice == '4') {        //Quen mat khau
                     bool done = false;
                     while(!done){
+                    printHeader("FORGOT PASSWORD");
                     User tempUser("", "", false);
                     string uname = getInput("Enter your username: ");
                     string registeredEmail = db.getUserEmail(db, uname);
